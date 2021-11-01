@@ -1,0 +1,123 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{amssymb, amsmath, amsthm, enumitem}
+\usepackage{subfiles}
+\usepackage[margin=2cm]{geometry}
+
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\usepackage{dsfont, bbm, mathrsfs}
+
+\usepackage[math]{kurier}
+
+\begin{document}
+    \section{Kurier}
+    \begin{definition}[Lebesgue Integral]
+        Let $(X, \mathcal{M}, \mu)$ be a measure space. Let $f: X \to \mathbb{C}$ be a $\mathcal{B}(\mathbb{C})/\mathcal{M}$-measureable 
+        function. Define the following formulations of an integral:
+        \begin{itemize}
+            \item If $f$ takes on only finitely many values in $\mathbb{R}^+$, then give the standard representation of $f$ 
+            as the simple function:
+            \[
+                f(x) = \sum_{i} y_i \mathbbm{1}_{\{f(x) = y_i\}}(x).
+            \]
+            Then define the Lebesgue integral of $f$ with respect to $\mu$ as:
+            \[
+                \int_X f(x)\;d\mu(x) = \sum_{i} y_i \mu(\{f(x) = y_i\}).
+            \]
+            \item If $f$ takes on values in $\mathbb{R}^{+}$, then define the Lebesgue integral of $f$ with respect to $\mu$ 
+            as:
+            \[
+                \int_X f(x)\;d\mu(x) = \sup\left\{\int_X g(x) \;d\mu(x)\mid g\le f \text{ and } g \text{ is a simple function}\right\}.
+            \]
+            This may or may not take on the ``value'' of $\infty$. 
+            \item If $f$ takes on values in $\mathbb{R}$, then give the functions $f^+ = \max\{f, 0\}$ and $f^- = \min\{f, 0\}$. 
+            Give the Lebesgue integral of $f$ with respect to $\mu$ as:
+            \[
+                \int_X f(x)\;d\mu(x) = \int_X f^+(x)\;d\mu(x) - \int_X f^-\;d\mu(x),
+            \]
+            provided that both of the integrals on the right exist and at least one of them is finite. 
+            \item Lastly, if $f$ takes on values in $\mathbb{C}$, then let $u$ and $v$ be the functions given by $u = \Re f$ and $v = \Im f$, 
+            i.e. $f(x) = u(x) + iv(x)$. Then define the Lebesgue integral of $f$ relative to $\mu$ as:
+            \[
+                \int_X f(x)\;d\mu(x) = \int_X u(x) \;d\mu(x) + i \int_X v(x)\;d\mu(x).
+            \] 
+        \end{itemize}
+        We usually write $\int f\;d\mu$ or just $\int f$ if the implied parts are easy to understand. Also we write $\int_A f$
+        to stand for $\int_X f\mathbbm{1}_A$. In total, these parts define the {\bf Lebesgue integral of $f$ with respect to $\mu$}.  
+    \end{definition}
+    \begin{theorem}[Cauchy's Integral Formula]
+        Let $U$ be an open subset of the $\mathbb{C}$ and suppose that the disk 
+        \[
+            D(z_0, r) = \{z \in \mathbb{C} \mid |z-z_0| < r\}
+        \]
+        is completely contained in $U$. Let $f:U\to \mathbb{C}$ be a holomorphic function and let $\gamma$ be the circle oriented
+        counterclockwise forming the boundary of $D(z_0, r)$. Then for every interior point $a$ of $D(z_0, r)$, 
+        \[
+            f(a) = \frac{1}{2\pi i} \oint_\gamma \;\frac{f(z)}{za}\;dz.
+        \] 
+        Moreover, because $(z-a)^{-1}$ can be given by the power series:
+        \[
+            \frac{1}{z-a} = \frac{1}{z}\sum_{n=0}^\infty \left(\frac{a}{z}\right)^n
+        \]
+        it follows that $f$ is analytic, infinitely differentiable, and 
+        \[
+            f^{(n)}(a) = \frac{n!}{2\pi i} \oint_\gamma \;\frac{f(z)}{(z-a)^{n+1}}\;dz.
+        \]
+    \end{theorem}
+    Here are examples of the major fonts:
+    \begin{description}
+        \item[Regular] 
+        \subitem ABCDEFGHIJKLMNOPQRSTUVWXYZ 
+        \subitem abcdefghijklmnopqrstuvwxyz 
+        \subitem 1234567890
+        \item[Slshape] 
+        \subitem {\slshape ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+        \subitem {\slshape abcdefghijklmnopqrstuvwxyz}
+        \subitem {\slshape 1234567890}
+        \item[Bfseries] 
+        \subitem {\bfseries ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+        \subitem {\bfseries abcdefghijklmnopqrstuvwxyz}
+        \subitem {\bfseries 1234567890}
+        \item[Slshape] 
+        \subitem {\scshape ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+        \subitem {\scshape abcdefghijklmnopqrstuvwxyz}
+        \subitem {\scshape 1234567890}
+        \item[Mathematics] 
+        \subitem $ABCDEFGHIJKLMNOPQRSTUVWXYZ$
+        \subitem $abcdefghijklmnopqrstuvwxyz$
+        \subitem $1234567890$
+        \item[Mathcal] 
+        \subitem $\mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$
+        \subitem $\mathcal{abcdefghijklmnopqrstuvwxyz}$
+        \subitem $\mathcal{1234567890}$
+        \item[Mathbb] 
+        \subitem $\mathbb{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$
+        \subitem $\mathbb{abcdefghijklmnopqrstuvwxyz}$
+        \subitem $\mathbb{1234567890}$
+        \item[Mathds] 
+        \subitem $\mathds{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$
+        \subitem $\mathds{abcdefghijklmnopqrstuvwxyz}$
+        \subitem $\mathds{1234567890}$
+        \item[Mathbbm] 
+        \subitem $\mathbbm{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$
+        \subitem $\mathbbm{abcdefghijklmnopqrstuvwxyz}$
+        \subitem $\mathbbm{1234567890}$
+        \item[Mathfrak]
+        \subitem $\mathfrak{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$
+        \subitem $\mathfrak{abcdefghijklmnopqrstuvwxyz}$
+        \subitem $\mathfrak{1234567890}$
+        \item[Mathscr]
+        \subitem $\mathscr{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$
+        \subitem $\mathscr{abcdefghijklmnopqrstuvwxyz}$
+        \subitem $\mathscr{1234567890}$
+        \item[Greek] $\alpha\beta\gamma\delta\epsilon\varepsilon\zeta\eta\theta\vartheta\iota\kappa\varkappa\lambda\mu\nu\xi\pi\varpi\rho\varrho\sigma\varsigma\tau\upsilon\phi\varphi\chi\phi\varphi\psi\omega$
+        \item[Greek (Capital)] $\Gamma\varGamma\Delta\varDelta\Theta\varTheta\Lambda\varLambda\Xi\varXi\Pi\varPi\Sigma\varSigma\Phi\varPhi\Psi\varPsi\Omega\varOmega$
+        \item[Common symbols] $\int\oint\iint\oiint\sum\prod\bigcup\bigcap\bigvee\bigwedge\bigoplus\bigotimes$
+        \item[Common symbols (displaystyle)] $\displaystyle \int\oint\iint\oiint\sum\prod\bigcup\bigcap\bigvee\bigwedge\bigoplus\bigotimes$
+        \item[Inline Sup/Sub-scripts] $\lim_{n\to\infty}\inf_\alpha\sup_{\stackrel{f:\mathbb{R} \to \mathbb{R}}{f \text{ is }1-\text{Lipschitz}}}\sum_{\alpha\in\mathcal{A}}\prod_{n=1}^\infty\int_a^b$
+        \item[Inline Sup/Sub-scripts (displaystyle)] $\displaystyle \lim_{n\to\infty}\inf_\alpha\sup_{\stackrel{f:\mathbb{R} \to \mathbb{R}}{f \text{ is }1-\text{Lipschitz}}}\sum_{\alpha\in\mathcal{A}}\prod_{n=1}^\infty\int_a^b$
+    \end{description}
+    \newpage
+\end{document}
